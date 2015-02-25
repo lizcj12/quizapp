@@ -1,0 +1,45 @@
+<%= form_for(@city) do |f| %>
+  <% if @city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h2>
+
+      <ul>
+      <% @city.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- No real changes to the field below, just added a line of direction to the user 'Enter a city:' -->
+
+<div class="field">
+
+Enter a city: <br />
+
+<%= f.label :name %><br>
+
+<%= f.text_field :name, :autofocus => true %>
+
+<!-- :autofocus => true puts the cursor on that particular field when the page is loaded -->
+
+</div>
+
+<div class="actions">
+
+<%= f.submit %>
+
+</div>
+
+<% end %>
+
+
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

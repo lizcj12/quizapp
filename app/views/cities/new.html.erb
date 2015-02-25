@@ -1,0 +1,40 @@
+<!--
+
+We will use this page (and corresponding _form page)
+
+as the page where the User enters their guesses.
+
+Notice the @message from the controller!
+
+This will display if the user makes
+
+an incorrect or duplicate guess.
+
+Below the form, we will have their correct answers
+
+displayed - numbered so they can see how many they've
+
+answered so far.
+
+-->
+
+
+<h1>Name the Cities Where TTS Has a Campus</h1>
+
+<div>
+	<%= @message %>
+
+</div>
+
+<br />
+
+
+<%= render 'form' %>
+
+<% @cities.each do |city| %>
+
+<%= "#{city.id}. #{city.name}" %><br />
+
+<% end %>
+
+<%= link_to 'Back', cities_path %>
